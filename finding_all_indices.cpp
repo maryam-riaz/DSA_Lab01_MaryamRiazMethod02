@@ -5,9 +5,11 @@ void find_indices(int arr[], int size, int key);
 
 int main()
 {
-	int arr[10] = {1, 2, 3, 4, 5, 3, 3, 8, 9, 10};
-	int size = sizeof(arr) / sizeof(arr[0]);
-	find_indices(arr, size, 11);
+	int arr1[] = {1,2,9,4,5,6,7,9,9,10};
+	int arr2[] = {};
+	find_indices(arr1, 10, 9);		// multiple occurences test
+	find_indices(arr1, 10, 3);		// key not present 
+	find_indices(arr2, 0, 3);		// empty array test
 	return 0;
 }
 
@@ -30,6 +32,6 @@ void find_indices(int arr[], int size, int key)
 		}
 	}
 	if (count == 0)
-		cout << "key not found\n";
+		cout << "key not found";
 	cout << endl;
 }
